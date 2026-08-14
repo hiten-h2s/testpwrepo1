@@ -1,22 +1,32 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite"
+    },
+    "backend": {
+      "root": "backend",
+      "framework": "express",
+      "entrypoint": "server.js",
+      "functions": {
+        "server.js": {
+          "maxDuration": 60
+        }
       }
     }
-  ],
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://safespace-hqng.onrender.com/api/$1"
+      "destination": {
+        "service": "backend"
+      }
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "destination": {
+        "service": "frontend"
+      }
     }
   ]
 }
