@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --card-bg: #1e293b;
+  --btn-primary: #0ea5e9;
+  --btn-primary-hover: #0284c7;
+  --btn-secondary: #334155;
+  --btn-secondary-hover: #475569;
+  --emergency-bg: #7f1d1d;
+  --emergency-text: #fef2f2;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.emergency-card {
+  background-color: var(--emergency-bg);
+  color: var(--emergency-text);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.emergency-card h2 {
+  margin-top: 0;
+}
+
+input, button {
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--btn-secondary);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button.primary {
+  background-color: var(--btn-primary);
+  color: white;
+}
+
+button.primary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+button.secondary {
+  background-color: var(--btn-secondary);
+  color: white;
+  margin-top: 1rem;
+}
+
+button.secondary:hover {
+  background-color: var(--btn-secondary-hover);
+}
+
+button.emergency-btn {
+  background-color: white;
+  color: var(--emergency-bg);
+  margin-top: 1rem;
+}
+
+.mic-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mic-btn {
+  width: auto;
+  padding: 1rem;
+  background-color: var(--btn-secondary);
+}
+
+.input-container {
+  flex-grow: 1;
+  margin-bottom: 0 !important;
+}
+
+.error-message {
+  color: #fca5a5;
+  background-color: rgba(127, 29, 29, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+h1, h2, p {
+  line-height: 1.5;
+}
